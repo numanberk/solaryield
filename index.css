@@ -1,0 +1,9 @@
+/* Removed @tailwind directives to prevent errors in non-build environments */
+
+body {
+  background-color: #f8fafc;
+}
+
+.dark body {
+  background-color: #0f172a;
+}
