@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { CalculatorForm } from './components/CalculatorForm';
-import { ResultsPanel } from './components/ResultsPanel';
-import { AdPlaceholder } from './components/AdPlaceholder';
-import { QuoteModal } from './components/QuoteModal';
+import { SolarCalculatorForm } from './components/SolarCalculatorForm';
+import { SolarResultsPanel } from './components/SolarResultsPanel';
+import { AdUnit } from './components/AdUnit';
+import { InstallerModal } from './components/InstallerModal';
 import { CalculatorInputs, CalculationResult } from './types';
 import { US_STATES_DATA, COST_PER_WATT, FEDERAL_TAX_CREDIT_RATE, DEFAULT_INFLATION_RATE } from './constants';
 import { Zap, X, HelpCircle, FileText, TrendingUp, Map, Moon, Sun } from 'lucide-react';
@@ -194,7 +194,7 @@ export default function App() {
           
           {/* Top Ad Unit */}
           <div className="mb-8 flex justify-center">
-            <AdPlaceholder format="leaderboard" />
+            <AdUnit format="leaderboard" />
           </div>
 
           <div className="text-center mb-10 max-w-3xl mx-auto">
@@ -210,16 +210,16 @@ export default function App() {
             
             {/* Left Column: Calculator Inputs & Ad */}
             <div className="lg:col-span-4 space-y-8">
-              <CalculatorForm inputs={inputs} setInputs={setInputs} />
+              <SolarCalculatorForm inputs={inputs} setInputs={setInputs} />
               
               <div className="hidden lg:block sticky top-24">
-                <AdPlaceholder format="sidebar" />
+                <AdUnit format="sidebar" />
               </div>
             </div>
 
             {/* Right Column: Results */}
             <div className="lg:col-span-8 space-y-8">
-              {result && <ResultsPanel result={result} darkMode={darkMode} />}
+              {result && <SolarResultsPanel result={result} darkMode={darkMode} />}
               
               <div className="bg-blue-900 text-white p-8 rounded-2xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
@@ -236,7 +236,7 @@ export default function App() {
 
               {/* Mobile Only Ad */}
               <div className="lg:hidden">
-                <AdPlaceholder format="inline" />
+                <AdUnit format="inline" />
               </div>
             </div>
           </div>
@@ -362,7 +362,7 @@ export default function App() {
       )}
       
       {showQuoteModal && (
-        <QuoteModal 
+        <InstallerModal 
           isOpen={showQuoteModal} 
           onClose={() => setShowQuoteModal(false)} 
           stateCode={inputs.stateCode} 
