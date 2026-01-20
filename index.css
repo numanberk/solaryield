@@ -1,4 +1,6 @@
-/* Removed @tailwind directives to prevent errors in non-build environments */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   background-color: #f8fafc;
