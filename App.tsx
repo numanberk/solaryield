@@ -5,7 +5,7 @@ import { AdUnit } from './components/AdUnit';
 import { InstallerModal } from './components/InstallerModal';
 import { CalculatorInputs, CalculationResult } from './types';
 import { US_STATES_DATA, COST_PER_WATT, FEDERAL_TAX_CREDIT_RATE, DEFAULT_INFLATION_RATE } from './constants';
-import { Zap, X, HelpCircle, FileText, TrendingUp, Map, Moon, Sun } from 'lucide-react';
+import { Zap, Moon, Sun, FileText, TrendingUp, HelpCircle, Map, X } from 'lucide-react';
 
 export default function App() {
   const [inputs, setInputs] = useState<CalculatorInputs>({
